@@ -1,0 +1,116 @@
+% ============================================================
+% EV-PRAC-01 · ISR-401 Ingeniería de Software
+% Compilador: pdflatex (TeX Live >= 2022) | Salida: 1 página A4
+% ============================================================
+\documentclass[10pt,a4paper]{extarticle}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[spanish]{babel}
+\usepackage[top=0.7cm,bottom=0.7cm,left=1.0cm,right=1.0cm]{geometry}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage[table]{xcolor}
+\usepackage{microtype}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+% ---------- Compactación ----------
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.0pt}
+\setlength{\tabcolsep}{3.0pt}
+\renewcommand{\arraystretch}{1.05}
+\setlist{nosep,leftmargin=1.1em,itemsep=0pt,topsep=0pt,parsep=0pt}
+\titleformat{\section}{\bfseries\small\color{blue!45!black}}{\thesection.}{0.4em}{}[\vspace{-4pt}\rule{\linewidth}{0.3pt}]
+\titlespacing*{\section}{0pt}{2pt}{1pt}
+\emergencystretch=2em
+
+\newcommand{\req}[1]{\textit{``#1''}}
+\newcommand{\bad}{\textcolor{red!70!black}{\textbf{Mala:}}}
+\newcommand{\good}{\textcolor{green!45!black}{\textbf{Buena:}}}
+
+\begin{document}
+
+% ---------- Encabezado ----------
+\begin{center}
+  {\large\bfseries Fundamentos de la Ingenier\'ia de Requisitos}\\[1pt]
+  {\footnotesize EV-PRAC-01 · ISR-401 Ingeniería de Software · \textbf{Kevin German Contreras Chavez} · Matrícula 1251167720 ·
+  Repo: \url{https://github.com/kcontrerasc3-cloud/ISR401-KevinContreras/tree/main/EV-PRAC-01}}\\[1pt]
+  {\scriptsize Bases: ISO/IEC/IEEE 29148:2018 · SWEBOK v4.0 (KA Software Requirements) · IREB CPRE Foundation Level v3.1}
+\end{center}
+\vspace{-4pt}
+
+% ============================================================
+\section{Definici\'on formal y propiedades}
+Seg\'un \textbf{ISO/IEC/IEEE 29148:2018}, un \emph{requisito} es un enunciado que traduce o expresa una necesidad junto con sus restricciones y condiciones asociadas. \textbf{IREB} lo caracteriza como (i) una necesidad percibida por un stakeholder, (ii) una capacidad o propiedad que el sistema debe poseer, o (iii) la representaci\'on documentada de ambas. \textbf{SWEBOK v4.0} lo concibe como una propiedad que el software debe exhibir para resolver un problema del mundo real.
+
+\textbf{Propiedades de un requisito individual (29148, cl.\,5.2.5):} necesario, apropiado, no ambiguo, completo, singular, factible, verificable, correcto y conforme (a plantilla y estilo). \textbf{Del conjunto de requisitos (cl.\,5.2.6):} completo, consistente, factible, comprensible y validable. Cada requisito debe llevar atributos de gesti\'on (identificador \'unico, fuente, prioridad, estado, riesgo) que habiliten su trazabilidad. Verbos normativos: \emph{deber\'a} (obligatorio), \emph{deber\'ia} (recomendado), \emph{podr\'a} (opcional).
+
+% ============================================================
+\section{Proceso de Ingenier\'ia de Requisitos}
+Las actividades son iterativas e incrementales, no una secuencia r\'igida:
+\begin{itemize}
+  \item \textbf{Elicitaci\'on:} descubrir necesidades desde stakeholders, documentos y sistemas existentes mediante entrevistas, talleres, observaci\'on, cuestionarios, prototipos y escenarios; clasificaci\'on de necesidades (modelo de Kano).
+  \item \textbf{An\'alisis:} detectar conflictos, omisiones y dependencias; modelado (casos de uso, UML, BPMN); evaluaci\'on de factibilidad, riesgos y negociaci\'on; priorizaci\'on (MoSCoW, AHP).
+  \item \textbf{Especificaci\'on:} documentar en lenguaje natural con plantillas (p.\,ej. EARS: \emph{[Condici\'on] [Sujeto] [Acci\'on] [Objeto] [Restricci\'on]}) y/o modelos; produce StRS, SyRS o SRS y la l\'inea base.
+  \item \textbf{Validaci\'on:} confirmar que los requisitos reflejan la necesidad real (validez) mediante revisiones, inspecciones, \textit{walkthroughs}, prototipos y derivaci\'on temprana de casos de prueba.
+  \item \textbf{Gesti\'on:} control de cambios, versionado, matriz de trazabilidad (bidireccional), l\'ineas base y m\'etricas de volatilidad de requisitos.
+\end{itemize}
+
+% ============================================================
+\section{Tipos de requisitos}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{2.2cm}XX@{}}
+\toprule
+Tipo & Definici\'on & Ejemplo \\ \midrule
+Funcional & Servicio, comportamiento o transformaci\'on de datos que el sistema debe realizar. & \req{El sistema deber\'a permitir al usuario autenticado restablecer su contrase\~na mediante un enlace enviado por correo.} \\
+No funcional (calidad) & Atributo de calidad o desempe\~no (ISO/IEC 25010: rendimiento, seguridad, usabilidad, fiabilidad, mantenibilidad). & \req{El 95\,\% de las b\'usquedas deber\'a responderse en $\le$\,2\,s con 500 usuarios concurrentes.} \\
+De dominio & Derivado del \'ambito de aplicaci\'on: leyes, est\'andares y reglas de negocio; pueden ser funcionales o no. & \req{El sistema deber\'a calcular el IVA conforme a la normativa tributaria vigente.} \\
+Restricci\'on & Limita las soluciones admisibles (tecnolog\'ia, costo, plazo, normativa, interfaz); no a\~nade funcionalidad. & \req{La base de datos deber\'a ser PostgreSQL 16 sobre Linux.} \\
+\bottomrule
+\end{tabularx}
+\normalsize
+\vspace{1pt}
+{\scriptsize\textit{Nota:} IREB distingue tres clases (funcionales, de calidad y restricciones); los requisitos de dominio se clasifican dentro de ellas.}
+
+% ============================================================
+\section{Perspectiva de sistemas: StRS, SyRS y SRS}
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}p{1.4cm}XXX@{}}
+\toprule
+ & StRS & SyRS & SRS \\ \midrule
+Nivel & Necesidades de stakeholders (espacio del problema, perspectiva del negocio/usuario). & Sistema completo (hardware, software, personas, procesos) como caja negra. & Componente de software dentro del sistema (espacio de la soluci\'on). \\
+Audiencia & Usuarios, clientes, patrocinadores. & Arquitectos de sistemas, ingenier\'ia, aseguramiento. & Desarrolladores, testers, mantenimiento. \\
+Contenido & Misi\'on, operaci\'on, entorno, procesos y calidad esperada. & Funciones, desempe\~no, interfaces, modos de operaci\'on y restricciones del sistema. & Requisitos funcionales, de interfaz, calidad, datos y restricciones del software. \\
+Relaci\'on & Fuente de la que se derivan los SyRS. & Deriva del StRS y se asigna a subsistemas. & Deriva del SyRS (software asignado) y base del dise\~no y de las pruebas. \\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+% ============================================================
+\section{Calidad de los requisitos}
+\textbf{Criterios SMART:} \emph{Specific} (concreto, sin vaguedad), \emph{Measurable} (con m\'etrica y umbral), \emph{Achievable} (factible t\'ecnica y econ\'omicamente), \emph{Relevant} (trazable a una necesidad) y \emph{Time-bound} (con plazo o condici\'on temporal cuando aplica). \textbf{Verificabilidad:} m\'etodo finito y objetivo de comprobaci\'on (inspecci\'on, an\'alisis, demostraci\'on o prueba). \textbf{Consistencia:} ausencia de contradicciones y uso de glosario controlado. \textbf{No ambig\"uedad:} una sola interpretaci\'on posible; evitar vaguesas.
+
+\smallskip
+\footnotesize
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+\bad\ \textbf{Defecto} & \good \\ \midrule
+\req{El sistema debe ser r\'apido y f\'acil de usar.} \newline \emph{No medible, ambiguo, no verificable.} &
+\req{Con 200 usuarios concurrentes, el sistema deber\'a responder el 95\,\% de las b\'usquedas en $\le$\,2\,s.} \\ \midrule
+\req{El sistema deber\'a soportar muchos usuarios y enviar reportes si es posible.} \newline \emph{No singular, vago, cl\'ausula de escape.} &
+\req{El sistema deber\'a soportar 1\,000 sesiones concurrentes.} \req{El sistema deber\'a generar el reporte mensual en PDF en $\le$\,30\,s.} \\ \midrule
+REQ-7: \req{La sesi\'on expirar\'a a los 15 min.} \newline REQ-12: \req{La sesi\'on nunca expirar\'a.} \emph{(Inconsistentes).} &
+REQ-7: \req{La sesi\'on deber\'a cerrarse tras 15\,min de inactividad, reiniciando el temporizador con cada acci\'on.} \\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+\vspace{2pt}
+{\scriptsize\textbf{Referencias:} ISO/IEC/IEEE 29148:2018; IEEE SWEBOK Guide v4.0, 2024; IREB CPRE FL Handbook v3.1.}
+
+\end{document}

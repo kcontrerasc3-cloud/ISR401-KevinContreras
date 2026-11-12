@@ -1,0 +1,167 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\geometry{top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cite}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    citecolor=blue
+}
+
+\begin{document}
+
+% --- CARÁTULA / ENCABEZADO TÉCNICO ---
+\begin{center}
+    {\Large \textbf{UNIVERSIDAD TÉCNICA ESTATAL DE QUEVEDO}} \\[0.2cm]
+    {\large \textbf{FACULTAD DE CIENCIAS DE LA COMPUTACIÓN}} \\[0.2cm]
+    {\large \textbf{CARRERA DE INGENIERÍA EN SOFTWARE}} \\[0.5cm]
+    
+    \vspace{0.3cm}
+    {\Large \textbf{TA-IND-01: IEEE 29148 y Tipos de Requisitos de un Sistema Conocido}} \\[0.2cm]
+    {\large Asignatura: Ingeniería de Requerimientos (ISR-401) · Paralelo A} \\[0.2cm]
+    {\large Docente: Ing. Gleiston Cicerón Guerrero Ulloa, PhD} \\[0.4cm]
+    
+    \textbf{Estudiante:} Contreras Chávez Kevin Germán (1251167720) \\
+    \textbf{Correo institucional:} \texttt{kcontrerasc3@uteq.edu.ec} \\
+    \textbf{Repositorio:} \url{https://github.com/kcontrerasc3-cloud/ISR401-KevinContreras} \\
+    \textbf{Fecha de entrega:} 7 de noviembre de 2026
+\end{center}
+
+\rule{\textwidth}{0.4pt}
+\vspace{0.4cm}
+
+% --- 1. DESCRIPCIÓN DEL SISTEMA ---
+\section{Descripción del Sistema Seleccionado (Telegram)}
+Para el desarrollo de esta actividad se ha seleccionado la plataforma de mensajería instantánea \textbf{Telegram}. Su propósito fundamental es proveer un servicio de comunicación multiplataforma basado en la nube, optimizado para ofrecer alta velocidad, sincronización multi-dispositivo en tiempo real y robustas capacidades para la gestión de comunidades masivas mediante canales, grupos y la integración de bots automatizados. Los usuarios principales van desde particulares que buscan mensajería rápida hasta administradores de comunidades y desarrolladores. El sistema opera en entornos conectados a internet mediante redes móviles (4G/5G) y Wi-Fi, ejecutándose de forma concurrente en dispositivos móviles (Android, iOS) y equipos de escritorio.
+
+Las evidencias visuales de la plataforma se respaldan con tres capturas propias almacenadas en la ruta \texttt{TA-IND-01/figuras/}: el canal privado de pruebas configurado (\texttt{fig1\_canal.png}), la interfaz de ajustes de seguridad (\texttt{fig2\_seguridad.png}), y el panel de gestión de almacenamiento y red (\texttt{fig3\_almacenamiento.png}).
+
+% --- 2. RESUMEN ANALÍTICO ---
+\section{Resumen Analítico: Norma ISO/IEC/IEEE 29148:2018}
+El proceso de ingeniería de requerimientos requiere la construcción de especificaciones rigurosas y libres de ambigüedad. De acuerdo con la norma \textbf{ISO/IEC/IEEE 29148:2018} (Cláusula 5.2.4), un \textbf{requisito bien formado} es aquel que cumple con una estructura sintáctica definida y propiedades lógicas que permiten su comprensión unívoca, su trazabilidad y su posterior verificación a lo largo del ciclo de vida del software. 
+
+Asimismo, la cláusula 5.2.5 establece las características fundamentales que debe poseer un \textbf{requisito individual}, entre las cuales destacan: ser necesario (aporta valor directo al sistema), singular (contiene una sola idea o capacidad por sentencia), realizable (técnica y económicamente viable), verificable (existen medios empíricos o formales para comprobar su cumplimiento), correcto, inequívoco, modificable y trazable. Por otro lado, la cláusula 5.2.6 aborda las características de un \textbf{conjunto de requisitos}, exigiendo que este sea completo, consistente (sin contradicciones internas), no redundante y apto para ser validado por los interesados.
+
+Finalmente, la cláusula 5.2.7 prohíbe explícitamente el uso de \textbf{términos ambiguos, vagos o subjetivos} (tales como ``user-friendly'', ``rápido'', ``aproximadamente'', ``robusto'', ``fácil'', ``flexible'' o conectores condicionales débiles como ``y/o''), ya que introducen múltiples interpretaciones e impiden establecer criterios objetivos de aceptación.
+
+% --- 3. GLOSARIO ---
+\section{Glosario (Cláusula 3)}
+Con base en la cláusula 3 de la norma ISO/IEC/IEEE 29148:2018, se definen diez términos clave adaptados al contexto de Telegram:
+\begin{enumerate}
+    \item \textbf{Adquisición de requisitos (Elicitation):} Proceso de recolección y descubrimientos de necesidades con los usuarios. \textit{Ejemplo en Telegram:} Consulta de requerimientos para el envío de archivos multimedia pesados en chats privados.
+    \item \textbf{Atributo de requisito:} Propiedad o metadato que caracteriza al requisito. \textit{Ejemplo en Telegram:} Asignar prioridad alta y trazabilidad al requisito de cifrado en chats secretos.
+    \item \textbf{Línea base (Baseline):} Versión formalmente aprobada de un conjunto de requisitos que sirve como referencia para cambios futuros. \textit{Ejemplo en Telegram:} Versión 1.0 de las especificaciones de canales privados aprobada para desarrollo.
+    \item \textbf{Parte interesada (Stakeholder):} Individuo u organización que afecta o es afectado por el sistema. \textit{Ejemplo en Telegram:} Administradores de canales y usuarios finales.
+    \item \textbf{Requisito funcional:} Declaración de lo que el sistema debe hacer. \textit{Ejemplo en Telegram:} El sistema debe permitir la creación de canales privados con un enlace de invitación único.
+    \item \textbf{Requisito no funcional (Calidad):} Criterio que delimita atributos del sistema. \textit{Ejemplo en Telegram:} Disponibilidad del servicio de almacenamiento en la nube.
+    \item \textbf{Restricción:} Condición limitante impuesta al diseño o implementación. \textit{Ejemplo en Telegram:} Compatibilidad obligatoria con el protocolo MTProto para la transmisión de datos.
+    \item \textbf{Trazabilidad (Traceability):} Habilidad de seguir la vida de un requisito en ambas direcciones. \textit{Ejemplo en Telegram:} Conectar el requisito de seguridad con su prueba de verificación en la interfaz de bloqueo.
+    \item \textbf{Validación:} Confirmación mediante examen de que se cumplen los requisitos especificados para un uso previsto. \textit{Ejemplo en Telegram:} Pruebas de aceptación en la verificación en dos pasos.
+    \item \textbf{Verificación:} Proceso de evaluación para determinar si los productos de una fase satisfacen las condiciones. \textit{Ejemplo en Telegram:} Comprobación técnica de que la latencia de entrega cumple el umbral estipulado.
+\end{enumerate}
+
+% --- 4. FORMULACIÓN DE REQUISITOS ---
+\section{Formulación de 15 Requisitos de Telegram}
+Se presentan quince requisitos del sistema distribuidos en cinco tipos de la norma, incorporando cinco requisitos de calidad evaluados bajo el modelo \textbf{ISO/IEC 25010:2023}.
+
+\begin{itemize}
+    \item \textbf{Tipo Funcional (RF):}
+    \begin{enumerate}
+        \item \textbf{REQ-FUN-01:} El sistema debe permitir la creación de un canal privado de difusión mediante la selección de opciones en el menú de configuración.
+        \item \textbf{REQ-FUN-02:} El sistema debe permitir el envío de archivos multimedia de hasta 2 GB en chats individuales y canales.
+        \item \textbf{REQ-FUN-03:} El sistema debe permitir al usuario activar la verificación en dos pasos ingresando una contraseña alfanumérica de respaldo.
+        \item \textbf{REQ-FUN-04:} El sistema debe permitir la edición de mensajes enviados en un plazo máximo de 48 horas posteriores a su emisión.
+        \item \textbf{REQ-FUN-05:} El sistema debe permitir la búsqueda de mensajes dentro de un chat mediante palabras clave introducidas en la barra de búsqueda superior.
+    \end{enumerate}
+    \item \textbf{Tipo de Calidad / Desempeño (RCA - ISO/IEC 25010: Eficiencia del desempeño):}
+    \begin{enumerate}
+        \item[6.] \textbf{REQ-CAL-01 (Desempeño):} El sistema debe entregar los mensajes de texto en un tiempo inferior a 300 ms bajo condiciones óptimas de red 4G. (\textit{Métrica:} Tiempo en milisegundos desde el clic de envío hasta la recepción; \textit{Umbral:} $\le 300$ ms).
+        \item[7.] \textbf{REQ-CAL-02 (Fiabilidad - Madurez):} El servicio de infraestructura en la nube debe garantizar una disponibilidad operativa del 99.9\% anual. (\textit{Métrica:} Porcentaje de tiempo de actividad del servidor; \textit{Umbral:} $\ge 99.9\%$).
+        \item[8.] \textbf{REQ-CAL-03 (Seguridad - Confidencialidad):} El sistema debe cifrar de extremo a extremo los mensajes en chats secretos utilizando el protocolo de cifrado MTProto 2.0. (\textit{Métrica:} Porcentaje de paquetes interceptados descifrables; \textit{Umbral:} $0\%$).
+        \item[9.] \textbf{REQ-CAL-04 (Compatibilidad - Interoperabilidad):} El sistema debe sincronizar el historial de mensajes de forma concurrente en al menos 3 dispositivos distintos (móvil y escritorio) con una divergencia menor a 2 segundos. (\textit{Métrica:} Retraso de sincronización en segundos; \textit{Umbral:} $\le 2$ s).
+        \item[10.] \textbf{REQ-CAL-05 (Usabilidad - Accesibilidad):} El sistema debe permitir la navegación completa de su interfaz mediante lectores de pantalla compatibles con sistemas operativos móviles. (\textit{Métrica:} Porcentaje de etiquetas de accesibilidad operativas; \textit{Umbral:} $100\%$).
+    \end{enumerate}
+    \item \textbf{Tipo de Interfaz Externa (RIE):}
+    \begin{enumerate}
+        \item[11.] \textbf{REQ-INT-01:} El sistema debe mostrar la interfaz gráfica de usuario adaptada al modo oscuro del sistema operativo del dispositivo.
+        \item[12.] \textbf{REQ-INT-02:} El sistema debe conectarse a la API oficial de Telegram para la recepción y envío de datos mediante solicitudes HTTPS seguras.
+    \end{enumerate}
+    \item \textbf{Tipo de Restricción (RRES):}
+    \begin{enumerate}
+        \item[13.] \textbf{REQ-RES-01:} El código fuente del cliente oficial de escritorio debe compilarse utilizando bibliotecas de código abierto compatibles con arquitecturas de 64 bits.
+    \end{enumerate}
+    \item \textbf{Tipo de Proceso / Mantenibilidad (RPR - ISO/IEC 25010: Mantenibilidad):}
+    \begin{enumerate}
+        \item[14.] \textbf{REQ-MAN-01:} El sistema debe registrar un archivo de eventos de errores críticos (\textit{log}) en la memoria local del dispositivo ante fallos de sincronización. (\textit{Métrica:} Porcentaje de excepciones capturadas en logs; \textit{Umbral:} $100\%$).
+        \item[15.] \textbf{REQ-MAN-02:} Las actualizaciones del paquete de instalación en dispositivos móviles no deben superar un tamaño de descarga comprimido de 150 MB. (\textit{Métrica:} Tamaño del archivo binario en megabytes; \textit{Umbral:} $\le 150$ MB).
+    \end{enumerate}
+\end{itemize}
+
+% --- 5. TABLA DE CLASIFICACIÓN (USANDO TABULARX PARA CERO ADVERTENCIAS) ---
+\section{Tabla de Clasificación y Criterios de Aceptación}
+\begin{table}[h]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\textwidth}{l X l l X X}
+\toprule
+\textbf{ID} & \textbf{Enunciado Resumido} & \textbf{Tipo} & \textbf{ISO/IEC 25010} & \textbf{Métrica} & \textbf{Criterio de Aceptación} \\
+\midrule
+REQ-01 & Creación de canal privado & Funcional & N/A & Tasa de éxito & Canal creado y visible solo por invitación. \\
+REQ-06 & Entrega rápida de mensajes & Calidad & Eficiencia (Desempeño) & Latencia (ms) & 100 de 100 mensajes entregados en $\le 300$ ms. \\
+REQ-07 & Disponibilidad del servicio & Calidad & Fiabilidad (Madurez) & Porcentaje uptime & Disponibilidad anual $\ge 99.9\%$. \\
+REQ-08 & Cifrado de extremo a extremo & Calidad & Seguridad (Confidencialidad) & Paquetes seguros & Cifrado MTProto activo sin fugas de texto plano. \\
+REQ-09 & Sincronización multi-dispositivo & Calidad & Compatibilidad (Interoperabilidad) & Retraso (s) & Mensajes reflejados en $\le 2$ s en escritorio. \\
+REQ-10 & Navegación accesible & Calidad & Usabilidad (Accesibilidad) & Cobertura UI & Lectores de pantalla leen el 100\% de menús. \\
+\bottomrule
+\end{tabularx}%
+\caption{Matriz de clasificación y aceptación de requisitos seleccionados.}
+\label{tab:clasificacion}
+\end{table}
+
+% --- 6. AUTOEVALUACIÓN Y CORRECCIÓN ---
+\section{Autoevaluación de Requisitos}
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{ID} & \textbf{Versión Anterior (Con fallos / términos vagos)} & \textbf{Versión Corregida (Norma ISO/IEC/IEEE 29148)} \\
+\midrule
+REQ-06 & El sistema debe enviar mensajes muy rápido a los chats. & El sistema debe entregar los mensajes de texto en un tiempo inferior a 300 ms bajo red 4G. \\
+REQ-07 & El servidor de Telegram debe ser muy confiable siempre. & El servicio de infraestructura en la nube debe garantizar una disponibilidad anual del 99.9\%. \\
+REQ-09 & La aplicación debe sincronizar bien y rápido en varias pantallas. & El sistema debe sincronizar el historial en al menos 3 dispositivos con divergencia $\le 2$ s. \\
+\bottomrule
+\end{tabularx}%
+\caption{Tabla de autoevaluación y corrección de enunciados ambiguos.}
+\label{tab:autoeval}
+\end{table}
+
+% --- 7. REFLEXIÓN PERSONAL ---
+\section{Reflexión Personal}
+Durante el desarrollo de esta actividad aplicada a la plataforma de Telegram, el aspecto que me representó mayor dificultad y requirió un análisis más profundo fue la formulación precisa de los requisitos de calidad cuantificables basados en el estándar ISO/IEC 25010:2023, específicamente al definir métricas y umbrales exactos para características no funcionales como el rendimiento y la fiabilidad. 
+
+En la práctica habitual, uno suele describir las aplicaciones desde una perspectiva puramente funcional (lo que el sistema hace, como enviar mensajes, audios o archivos y crear canales), utilizando frases ambiguas o generales como «el sistema debe ser rápido» o «debe garantizar una buena seguridad». Sin embargo, al aplicar los criterios estipulados en la norma ISO/IEC/IEEE 29148:2018, comprendí que un requisito técnicamente válido exige eliminar toda ambigüedad. Esto implicó investigar y acotar parámetros numéricos reales, tales como establecer un umbral exacto de latencia en milisegundos para la entrega de mensajes o un porcentaje específico de disponibilidad del servicio en la nube. 
+
+Este ejercicio me permitió valorar la importancia de la ingeniería de requisitos en el desarrollo de software, ya que pasar de enunciados vagos a especificaciones verificables es fundamental para evitar malentendidos entre desarrolladores y clientes, asegurando que el producto final sea medible y cumpla con altos estándares de calidad antes de su implementación.
+
+% --- 8. REFERENCIAS BIBLIOGRÁFICAS ---
+\section{Referencias Bibliográficas}
+\begin{thebibliography}{4}
+\bibitem{iso29148} ISO/IEC/IEEE, \emph{ISO/IEC/IEEE 29148:2018 Systems and software engineering -- Life cycle processes -- Requirements engineering}, International Standard, 2018.
+\bibitem{iso25010} ISO/IEC, \emph{ISO/IEC/IEEE 25010:2023 Systems and software engineering -- Systems and software Quality Requirements and Evaluation (SQuaRE) -- Product quality model}, International Standard, 2023.
+\bibitem{swebok} H. Washizaki, Ed., \emph{Guide to the Software Engineering Body of Knowledge (SWEBOK Guide)}, Version 4.0, IEEE Computer Society, 2024.
+\end{thebibliography}
+
+\end{document}

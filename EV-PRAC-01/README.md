@@ -1,18 +1,23 @@
-# EV-PRAC-01 · Fundamentos de Ingeniería de Requisitos
+# EV-PRAC-01 · Ingeniería de Requisitos (ISR-401)
 
-**Materia:** Ingeniería de Software (ISR-401)  
-**Estudiante:** Kevin German Contreras Chavez  
-**Matrícula / Cédula:** 1251167720  
-**Repositorio:** [ISR401-KevinContreras](https://github.com/kcontrerasc3-cloud/ISR401-KevinContreras/tree/main/EV-PRAC-01)
+- **Estudiante:** Kevin Germán Contreras Chávez
+- **Programa:** Ingeniería en Software — UTEQ (SPA 2026-2027)
+- **Evaluación:** EV-PRAC-01
 
-Documento técnico de **1 página (A4)** desarrollado bajo los estándares ISO/IEC/IEEE 29148:2018, SWEBOK v4.0 e IREB CPRE FL v3.1.
+## Estructura del directorio
 
----
+- `main.tex`: Código fuente principal en LaTeX.
+- `main.pdf`: Documento compilado final.
+- `logoband.png`: Encabezado institucional.
+- `evidencias/hoja-01.jpg`: Evidencia fotográfica de la hoja 1.
+- `evidencias/hoja-02.jpg`: Evidencia fotográfica de la hoja 2.
+- `evidencias/evidencia-ev-cue-01.png`: Captura de respaldo del cuestionario `EV-CUE-01` en el SGA.
+- `README.md`: Instrucciones de uso y compilación.
 
-## �� Estructura del Directorio
+## Instrucciones de compilación
 
-```text
-.
-├── main.tex      # Código fuente principal en LaTeX
-├── main.pdf      # Documento compilado final (1 página)
-└── README.md     # Instrucciones y documentación del repositorio
+Requiere una distribución LaTeX con `pdflatex` instalada. Ejecuta en orden desde la carpeta `EV-PRAC-01/`:
+
+```bash
+pdflatex -interaction=nonstopmode main.tex
+pdflatex -interaction=nonstopmode main.tex
